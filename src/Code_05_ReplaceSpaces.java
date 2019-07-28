@@ -6,7 +6,7 @@
  * @author Jackie Ke
  * @date 2019/7/27
  */
-public class Code_06_ReplaceSpaces {
+public class Code_05_ReplaceSpaces {
 
     /**
      * 从字符串的后面开始复制和替换。

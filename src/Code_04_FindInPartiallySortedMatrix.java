@@ -6,7 +6,7 @@
  * @author Jackie Ke
  * @date 2019/7/27
  */
-public class Code_05_FindInPartiallySortedMatrix {
+public class Code_04_FindInPartiallySortedMatrix {
 
     /**
      * 方法一：每次都选取数组查找范围内的右上角数字

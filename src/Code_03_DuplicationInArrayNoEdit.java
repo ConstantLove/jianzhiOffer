@@ -10,7 +10,7 @@ import java.util.HashSet;
  * @author Jackie Ke
  * @date 2019/7/25
  */
-public class Code_04_DuplicationInArrayNoEdit {
+public class Code_03_DuplicationInArrayNoEdit {
 
     /**
      * 方法一：利用Hash表，遍历数组，判断每一个数是否在Hash表中存在，若已存在，说明该数字在数组中重复，直接返回该数字；若不存在，添加到Hash表中，继续遍历。
