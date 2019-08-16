@@ -30,16 +30,13 @@ public class Code_12_StringPathInMatrix {
     }
 
     private static boolean hasPathCore(char[][] matrix, int row, int col, int pathLength, char[] str, boolean[][] visited) {
-        //结束条件
-        if (pathLength >= str.length) {
+        if (str[pathLength] == '\0') {
             return true;
         }
 
         boolean hasPath = false;
-        //递归
         if (row >= 0 && col >= 0 && row < matrix.length && col < matrix[0].length && matrix[row][col] == str[pathLength]
                 && !visited[row][col]) {
-            //如果未被访问，且匹配字符串，标记当前位置为已访问，分别访问上下左右四个位置
             pathLength++;
             visited[row][col] = true;
 
@@ -48,7 +45,6 @@ public class Code_12_StringPathInMatrix {
                     || hasPathCore(matrix, row, col + 1, pathLength, str, visited)
                     || hasPathCore(matrix, row + 1, col, pathLength, str, visited);
 
-            //当前递归的路线求解失败了，要把该路线的标记清楚掉，其他路径可以继续访问此路线的节点
             if (!hasPath) {
                 --pathLength;
                 visited[row][col] = false;
@@ -64,11 +60,9 @@ public class Code_12_StringPathInMatrix {
                 {'c', 'f', 'c', 's'},
                 {'j', 'd', 'e' ,'h'}
         };
-        char[] str1 = {'b', 'f', 'c', 'e'};
-        char[] str2 = {'a', 'b', 'f', 'b'};
+        char[] str = {'b', 'f', 'c', 'e'};
 //        System.out.println(matrix.length + " " + matrix[0].length);
-        System.out.println(hasPath(matrix, str1) ? "包含该字符串" : "不包含该字符串");
-        System.out.println(hasPath(matrix, str2) ? "包含该字符串" : "不包含该字符串");
+        System.out.println(hasPath(matrix, str) ? "包含该字符串" : "不包含该字符串");
     }
 
 }
