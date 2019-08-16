@@ -39,6 +39,21 @@ public class Code_24_ReverseList {
         return reverseHead;
     }
 
+    private static Node recursionReverseList(Node head, Node pre) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null) {
+            head.next = pre;
+            return head;
+        }
+
+        Node next = head.next;
+        head.next = pre;
+        pre = head;
+        return recursionReverseList(next, pre);
+    }
+
     public static void main(String[] args){
         Node head = new Node(1);
         head.next = new Node(2);
@@ -46,7 +61,8 @@ public class Code_24_ReverseList {
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
         head.next.next.next.next.next = new Node(6);
-        head = reverseList(head);
+        head = reverseList(head);              //普通解法
+        head = recursionReverseList(head, null); //递归解法
         while (head != null) {
             System.out.print(head.key + " ");
             head = head.next;
