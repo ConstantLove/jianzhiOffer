@@ -11,7 +11,7 @@
 public class Code_58_LeftRotateString {
 
     private static String leftRotareString(String str, int num) {
-        if (str == null && num < 0) {
+        if (str == null || num < 0 || num > str.length() - 1) {
             return null;
         }
 
